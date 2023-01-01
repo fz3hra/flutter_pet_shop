@@ -20,6 +20,9 @@ class MyApp extends StatelessWidget {
       initialRoute: Routes.onboardingScreen,
       routes: {
         Routes.onboardingScreen: (context) => const OnboardingScreen(),
+        Routes.loginScreen: (context) => const LoginScreen(),
+        Routes.homeScreen: (context) => const HomeScreen(),
+        Routes.registerScreen: (context) => const RegistrationScreen(),
       },
     );
   }
