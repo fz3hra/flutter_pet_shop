@@ -4,6 +4,7 @@ import 'package:flutter_pet_app/config/routes.dart';
 import 'package:flutter_pet_app/constants/constant_exports.dart';
 import 'package:flutter_pet_app/utils/util_exports.dart';
 import 'package:flutter_pet_app/widgets/widget_exports.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:gap/gap.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -14,9 +15,11 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  final storage = new FlutterSecureStorage();
+
   // start of texteditingcontrollers
-  TextEditingController usernameTextField = TextEditingController();
-  TextEditingController passwordTextField = TextEditingController();
+  TextEditingController usernameTextField = TextEditingController(text: '');
+  TextEditingController passwordTextField = TextEditingController(text: '');
   //  end of text editing controllers
 
   // start of form key
@@ -24,9 +27,26 @@ class _LoginScreenState extends State<LoginScreen> {
   // end of form key
 
   // start of bool values
-  bool switchValue = false;
+  bool isRemember = false;
   bool isShowPassword = false;
   // end of bool values
+
+  String test = "";
+  Future<void> readSecureData() async {
+    usernameTextField.text = await storage.read(key: 'emailLogin') ?? '';
+    passwordTextField.text = await storage.read(key: 'passwordLogin') ?? '';
+  }
+
+  Future<void> deleteKey() async {
+    await storage.deleteAll();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    // deleteKey();
+    readSecureData();
+  }
 
   // dispose method
   @override
@@ -38,9 +58,14 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   // button submit
-  void _submit() {
+  void _submit() async {
     if (_formKey.currentState!.validate()) {
-      context.pushNamedNavigator(context, Routes.homeScreen);
+      if (isRemember == true) {
+        await storage.write(key: 'emailLogin', value: usernameTextField.text);
+        await storage.write(
+            key: 'passwordLogin', value: passwordTextField.text);
+      }
+      if (mounted) context.pushNamedNavigator(context, Routes.homeScreen);
     }
   }
   // end of button submit
@@ -98,7 +123,6 @@ class _LoginScreenState extends State<LoginScreen> {
                             hintText: 'fz3hra@gmail.com',
                             labelText: 'Email or Username',
                             obscureText: false,
-                            // errorText: err(),
                             icon: IconConstants.emailIcon,
                             validator: (emailValidator) {
                               if (emailValidator!.emailErrorText == false)
@@ -111,7 +135,6 @@ class _LoginScreenState extends State<LoginScreen> {
                             hintText: 'xxxx',
                             labelText: 'Password',
                             obscureText: isShowPassword == true ? false : true,
-                            // errorText: passwordErrorText,
                             icon: IconConstants.passIcon,
                             suffixIcon: AuthShowPasswordWidget(
                               showpassword: (showPassword) {
@@ -135,10 +158,10 @@ class _LoginScreenState extends State<LoginScreen> {
                                   CupertinoSwitch(
                                     onChanged: (bool value) {
                                       setState(() {
-                                        switchValue = value;
+                                        isRemember = value;
                                       });
                                     },
-                                    value: switchValue,
+                                    value: isRemember,
                                   ),
                                   const Text(
                                     "Remember",
