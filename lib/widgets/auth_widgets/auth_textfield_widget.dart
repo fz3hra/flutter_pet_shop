@@ -8,6 +8,7 @@ class AuthTextFieldWidget extends StatelessWidget {
   bool obscureText;
   Icon icon;
   Widget? suffixIcon;
+  String? Function(String?)? validator;
   AuthTextFieldWidget({
     super.key,
     required this.controller,
@@ -16,6 +17,7 @@ class AuthTextFieldWidget extends StatelessWidget {
     required this.obscureText,
     required this.icon,
     this.suffixIcon,
+    this.validator,
   });
 
   @override
@@ -34,9 +36,15 @@ class AuthTextFieldWidget extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                TextField(
+                TextFormField(
                   controller: controller,
                   obscureText: obscureText,
+                  validator: validator,
+                  style: TextStyle(
+                    fontFamily: 'poppins_bold',
+                    color: Colors.black,
+                    fontSize: 14,
+                  ),
                   decoration: InputDecoration(
                     suffixIcon: suffixIcon,
                     floatingLabelBehavior: FloatingLabelBehavior.always,
@@ -55,7 +63,6 @@ class AuthTextFieldWidget extends StatelessWidget {
                       fontSize: 14,
                     ),
                   ),
-                  style: TextStyle(),
                 ),
               ],
             ),
