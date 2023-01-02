@@ -30,6 +30,7 @@ class PetWidget extends StatelessWidget {
               ),
               child: Image.asset(
                 petImage,
+                fit: BoxFit.fill,
               ),
             ),
             ListTile(

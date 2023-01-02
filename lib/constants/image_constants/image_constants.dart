@@ -14,7 +14,9 @@ class ImageConstants {
       "assets/images/home/bannerImage-removebg.png";
   static const String categoryImage1 = "assets/images/home/categoryImage1.png";
   static const String categoryImage2 = "assets/images/home/categoryImage2.png";
-    static const String categoryImage3 = "assets/images/home/categoryImage3.png";
+  static const String categoryImage3 = "assets/images/home/categoryImage3.png";
   static const String categoryImage4 = "assets/images/home/categoryImage4.png";
   static const String categoryImage5 = "assets/images/home/categoryImage5.png";
+  static const String dog1 = "assets/images/home/dog1.png";
+  static const String dog2 = "assets/images/home/dog2.png";
 }

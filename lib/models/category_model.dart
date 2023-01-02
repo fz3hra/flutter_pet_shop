@@ -35,13 +35,13 @@ class CategoryService {
       petmodels: [
         PetModel(
           petName: 'Samantha',
-          petImage: ImageConstants.categoryImage1,
+          petImage: ImageConstants.dog1,
           petDistance: '10km',
           categoryId: 1,
         ),
         PetModel(
           petName: 'Kitly',
-          petImage: ImageConstants.categoryImage1,
+          petImage: ImageConstants.dog2,
           petDistance: '5km',
           categoryId: 1,
         ),
