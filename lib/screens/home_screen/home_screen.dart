@@ -76,9 +76,8 @@ class _HomeScreenState extends State<HomeScreen> {
                               index: categories.id,
                             ),
                             onTap: () {
-                              print("index ${categories.id}");
                               setState(() {
-                                _currentIndex = categories.id;
+                                _currentIndex = index;
                               });
                             },
                           );
