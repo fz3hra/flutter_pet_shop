@@ -8,4 +8,13 @@ class ImageConstants {
       "assets/images/authentication/bottom_image2-removebg.png";
   static const String authTopImage =
       "assets/images/authentication/top_image.jpeg";
+  static const String profileImage =
+      "assets/images/home/profileImage-removebg.png";
+  static const String bannerImage =
+      "assets/images/home/bannerImage-removebg.png";
+  static const String categoryImage1 = "assets/images/home/categoryImage1.png";
+  static const String categoryImage2 = "assets/images/home/categoryImage2.png";
+    static const String categoryImage3 = "assets/images/home/categoryImage3.png";
+  static const String categoryImage4 = "assets/images/home/categoryImage4.png";
+  static const String categoryImage5 = "assets/images/home/categoryImage5.png";
 }

@@ -32,6 +32,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter:
     sdk: flutter
+  eva_icons_flutter: ^3.1.0
   flutter_secure_storage: ^7.0.1
   gap: ^2.0.1
   google_fonts: ^3.0.1
@@ -57,6 +58,13 @@ flutter:
     - assets/images/authentication/bottom_image1-removebg.png
     - assets/images/authentication/bottom_image2-removebg.png
     - assets/images/authentication/top_image.jpeg
+    - assets/images/home/profileImage-removebg.png
+    - assets/images/home/bannerImage-removebg.png
+    - assets/images/home/categoryImage1.png
+    - assets/images/home/categoryImage2.png
+    - assets/images/home/categoryImage3.png
+    - assets/images/home/categoryImage4.png
+    - assets/images/home/categoryImage5.png
     #   - images/a_dot_ham.jpeg
     # An image asset can refer to one or more resolution-specific "variants", see
     # https://flutter.dev/assets-and-images/#resolution-aware
