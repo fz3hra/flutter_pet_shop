@@ -5,3 +5,7 @@ export 'home_widgets/banner_widget.dart';
 export 'home_widgets/category_widget.dart';
 export 'home_widgets/appbar_widget.dart';
 export 'home_widgets/pet_widget.dart';
+export 'pet_detail_widgets/pet_container_widget.dart';
+export 'pet_detail_widgets/pet_description_widget.dart';
+export 'pet_detail_widgets/pet_owner_contact_widget.dart';
+export 'button_widgets/full_width_button_widget.dart';

@@ -24,21 +24,38 @@ class PetWidget extends StatelessWidget {
             Container(
               margin: const EdgeInsets.all(8),
               width: MediaQuery.of(context).size.width,
+              height: 200,
               decoration: BoxDecoration(
                 color: const Color(0xFFF9E3DE),
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Image.asset(
                 petImage,
-                fit: BoxFit.fill,
+                fit: BoxFit.fitHeight,
               ),
             ),
             ListTile(
-              title: Text(petName),
+              title: Text(
+                petName,
+                style: const TextStyle(
+                  fontFamily: 'poppins_semi_bold',
+                ),
+              ),
               subtitle: Row(
                 children: [
-                  const Icon(Icons.location_on_outlined),
-                  Expanded(child: Text("Distance ($petDistance)")),
+                  const Icon(
+                    Icons.location_on_outlined,
+                    color: ColorConstants.red,
+                  ),
+                  Expanded(
+                    child: Text(
+                      "Distance ($petDistance)",
+                      style: const TextStyle(
+                        fontFamily: 'poppins_regular',
+                        fontSize: 12,
+                      ),
+                    ),
+                  ),
                 ],
               ),
               trailing: const Icon(

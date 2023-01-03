@@ -19,4 +19,6 @@ class ImageConstants {
   static const String categoryImage5 = "assets/images/home/categoryImage5.png";
   static const String dog1 = "assets/images/home/dog1.png";
   static const String dog2 = "assets/images/home/dog2.png";
+  static const String dog3 = "assets/images/home/dog3.png";
+  static const String userProfile = "assets/images/pet_detail/userImage.png";
 }

@@ -30,4 +30,11 @@ class FontConstants {
       color: Colors.white,
     ),
   );
+
+  static const TextTheme commonText = TextTheme(
+    titleSmall: TextStyle(
+      fontFamily: 'poppins_regular',
+      fontSize: 12,
+    ),
+  );
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_pet_app/config/routes.dart';
 import 'package:flutter_pet_app/models/category_model.dart';
 import 'package:flutter_pet_app/widgets/widget_exports.dart';
 import 'package:gap/gap.dart';
@@ -48,7 +49,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 const Gap(4),
                 const BannerWidget(),
-                // !start of category
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -89,26 +89,45 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ],
                 ),
-                // !end of category
                 const Gap(16),
-                SizedBox(
-                  height: 300,
-                  child: ListView.separated(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: CategoryService
-                        .categoryLists[_currentIndex].petmodels.length,
-                    itemBuilder: (BuildContext context, int index) {
-                      var category = CategoryService
-                          .categoryLists[_currentIndex].petmodels[index];
-                      return PetWidget(
-                        petName: category.petName,
-                        petDistance: category.petDistance,
-                        petImage: category.petImage,
-                      );
-                    },
-                    separatorBuilder: (BuildContext context, int index) {
-                      return const SizedBox(width: 24);
-                    },
+                GestureDetector(
+                  child: SizedBox(
+                    height: 300,
+                    child: ListView.separated(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: CategoryService
+                          .categoryLists[_currentIndex].petmodels.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        var category = CategoryService
+                            .categoryLists[_currentIndex].petmodels[index];
+                        return GestureDetector(
+                          onTap: () => Navigator.pushNamed(
+                            context,
+                            Routes.petDetailScreen,
+                            arguments: {
+                              'petName': category.petName,
+                              'petImage': category.petImage,
+                              'petDistance': category.petDistance,
+                              'petGender': category.petGender,
+                              'petAge': category.petAge,
+                              'petWeight': category.petWeight,
+                              'petDescription': category.petDescription,
+                            },
+                          ),
+                          child: Hero(
+                            tag: category.petName,
+                            child: PetWidget(
+                              petName: category.petName,
+                              petDistance: category.petDistance,
+                              petImage: category.petImage,
+                            ),
+                          ),
+                        );
+                      },
+                      separatorBuilder: (BuildContext context, int index) {
+                        return const SizedBox(width: 24);
+                      },
+                    ),
                   ),
                 ),
               ],
