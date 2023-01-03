@@ -185,18 +185,8 @@ class _LoginScreenState extends State<LoginScreen> {
                           const Gap(24),
                           GestureDetector(
                             onTap: _submit,
-                            child: Container(
-                              padding: const EdgeInsets.all(24),
-                              width: MediaQuery.of(context).size.width,
-                              decoration: BoxDecoration(
-                                color: ColorConstants.red,
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                              child: Text(
-                                "Sign in",
-                                textAlign: TextAlign.center,
-                                style: FontConstants.authTexts.labelSmall,
-                              ),
+                            child: FullWidthButtonWidget(
+                              buttonName: 'Sign In',
                             ),
                           ),
                           const Gap(16),

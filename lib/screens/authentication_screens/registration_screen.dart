@@ -134,18 +134,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                         const Gap(24),
                         GestureDetector(
                           onTap: _submit,
-                          child: Container(
-                            padding: const EdgeInsets.all(24),
-                            width: MediaQuery.of(context).size.width,
-                            decoration: BoxDecoration(
-                              color: ColorConstants.red,
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                            child: Text(
-                              "Sign Up",
-                              textAlign: TextAlign.center,
-                              style: FontConstants.authTexts.labelSmall,
-                            ),
+                          child: FullWidthButtonWidget(
+                            buttonName: 'Sign Up',
                           ),
                         ),
                         const Gap(16),
