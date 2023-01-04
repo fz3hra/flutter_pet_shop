@@ -1,4 +1,5 @@
 export 'onboarding_widgets/dot_container_widget.dart';
+export 'common_app_bar_widget/common_app_bar_widget.dart';
 export 'auth_widgets/auth_textfield_widget.dart';
 export 'auth_widgets/auth_show_password_widget.dart';
 export 'home_widgets/banner_widget.dart';

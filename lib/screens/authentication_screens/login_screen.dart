@@ -65,11 +65,11 @@ class _LoginScreenState extends State<LoginScreen> {
         await storage.write(
             key: 'passwordLogin', value: passwordTextField.text);
       }
-      if (mounted) context.pushNamedNavigator(context, Routes.homeScreen);
+      if (mounted) context.pushNamedNavigator(context, Routes.bottomNav);
     }
   }
-  // end of button submit
 
+  // end of button submit
   @override
   Widget build(BuildContext context) {
     return SafeArea(

@@ -4,4 +4,5 @@ class RouteConstants {
   static const String register = '/registration';
   static const String home = '/home';
   static const String pet = 'pet';
+  static const String bottomNav = 'bottomNav';
 }

@@ -3,3 +3,7 @@ export 'authentication_screens/login_screen.dart';
 export 'authentication_screens/registration_screen.dart';
 export 'home_screen/home_screen.dart';
 export 'pet_detail_screen/pet_detail_screen.dart';
+export 'favourite_screens/favourite_screen.dart';
+export 'chat_screens/chat_screen.dart';
+export 'account_screens/account_screen.dart';
+export 'tab_navigation.dart';
