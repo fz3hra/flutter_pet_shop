@@ -2,7 +2,7 @@ import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_pet_app/constants/constant_exports.dart';
 import 'package:flutter_pet_app/models/pet_model.dart';
-import 'package:flutter_pet_app/providers/add_favourite.dart';
+import 'package:flutter_pet_app/providers/add_favourite_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 class PetWidget extends ConsumerWidget {
