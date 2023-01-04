@@ -21,6 +21,7 @@ class CategoryService {
       categoryName: 'Cat',
       petmodels: [
         PetModel(
+          petId: 1,
           petName: 'Moutouik',
           petImage: ImageConstants.categoryImage1,
           petDistance: '5km',
@@ -30,6 +31,7 @@ class CategoryService {
           petWeight: 10,
           petDescription:
               'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc leo tortor, posuere sit amet est commodo, scelerisque ultricies arcu. Nullam eros sapien, auctor sed mattis et, eleifend eget lacus. Pellentesque vitae ante sed magna aliquam aliquam. Vivamus sit amet mauris ut nibh luctus finibus. Suspendisse ac ligula at ipsum ullamcorper scelerisque id non mi.',
+          isFavourite: false,
         ),
       ],
     ),
@@ -39,6 +41,7 @@ class CategoryService {
       categoryName: 'Dog',
       petmodels: [
         PetModel(
+          petId: 2,
           petName: 'Samantha',
           petImage: ImageConstants.dog1,
           petDistance: '10km',
@@ -48,8 +51,10 @@ class CategoryService {
           petWeight: 10,
           petDescription:
               'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+          isFavourite: false,
         ),
         PetModel(
+          petId: 3,
           petName: 'Kitly',
           petImage: ImageConstants.dog2,
           petDistance: '5km',
@@ -59,6 +64,7 @@ class CategoryService {
           petWeight: 10,
           petDescription:
               'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc leo tortor, posuere sit amet est commodo, scelerisque ultricies arcu. Nullam eros sapien, auctor sed mattis et, eleifend eget lacus. Pellentesque vitae ante sed magna aliquam aliquam. Vivamus sit amet mauris ut nibh luctus finibus. Suspendisse ac ligula at ipsum ullamcorper scelerisque id non mi.',
+          isFavourite: false,
         ),
       ],
     ),
@@ -68,6 +74,7 @@ class CategoryService {
       categoryName: 'Fish',
       petmodels: [
         PetModel(
+          petId: 4,
           petName: 'Fisher',
           petImage: ImageConstants.categoryImage1,
           petDistance: '100km',
@@ -77,8 +84,10 @@ class CategoryService {
           petWeight: 2,
           petDescription:
               'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc leo tortor, posuere sit amet est commodo, scelerisque ultricies arcu. Nullam eros sapien, auctor sed mattis et, eleifend eget lacus. Pellentesque vitae ante sed magna aliquam aliquam. Vivamus sit amet mauris ut nibh luctus finibus. Suspendisse ac ligula at ipsum ullamcorper scelerisque id non mi.',
+          isFavourite: false,
         ),
         PetModel(
+          petId: 5,
           petName: 'Fisher11',
           petImage: ImageConstants.categoryImage1,
           petDistance: '20km',
@@ -88,8 +97,10 @@ class CategoryService {
           petWeight: 10,
           petDescription:
               'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc leo tortor, posuere sit amet est commodo, scelerisque ultricies arcu. Nullam eros sapien, auctor sed mattis et, eleifend eget lacus. Pellentesque vitae ante sed magna aliquam aliquam. Vivamus sit amet mauris ut nibh luctus finibus. Suspendisse ac ligula at ipsum ullamcorper scelerisque id non mi.',
+          isFavourite: false,
         ),
         PetModel(
+          petId: 6,
           petName: 'Fishered',
           petImage: ImageConstants.categoryImage1,
           petDistance: '2km',
@@ -99,6 +110,7 @@ class CategoryService {
           petWeight: 10,
           petDescription:
               'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc leo tortor, posuere sit amet est commodo, scelerisque ultricies arcu. Nullam eros sapien, auctor sed mattis et, eleifend eget lacus. Pellentesque vitae ante sed magna aliquam aliquam. Vivamus sit amet mauris ut nibh luctus finibus. Suspendisse ac ligula at ipsum ullamcorper scelerisque id non mi.',
+          isFavourite: false,
         ),
       ],
     ),
@@ -108,6 +120,7 @@ class CategoryService {
       categoryName: 'Chick',
       petmodels: [
         PetModel(
+          petId: 7,
           petName: 'Quak',
           petImage: ImageConstants.categoryImage1,
           petDistance: '20km',
@@ -117,6 +130,7 @@ class CategoryService {
           petWeight: 10,
           petDescription:
               'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc leo tortor, posuere sit amet est commodo, scelerisque ultricies arcu. Nullam eros sapien, auctor sed mattis et, eleifend eget lacus. Pellentesque vitae ante sed magna aliquam aliquam. Vivamus sit amet mauris ut nibh luctus finibus. Suspendisse ac ligula at ipsum ullamcorper scelerisque id non mi.',
+          isFavourite: false,
         ),
       ],
     ),
@@ -126,6 +140,7 @@ class CategoryService {
       categoryName: 'Rabbit',
       petmodels: [
         PetModel(
+          petId: 8,
           petName: 'Keimi',
           petImage: ImageConstants.categoryImage1,
           petDistance: '1km',
@@ -135,8 +150,10 @@ class CategoryService {
           petWeight: 10,
           petDescription:
               'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc leo tortor, posuere sit amet est commodo, scelerisque ultricies arcu. Nullam eros sapien, auctor sed mattis et, eleifend eget lacus. Pellentesque vitae ante sed magna aliquam aliquam. Vivamus sit amet mauris ut nibh luctus finibus. Suspendisse ac ligula at ipsum ullamcorper scelerisque id non mi.',
+          isFavourite: false,
         ),
         PetModel(
+          petId: 10,
           petName: 'Bobo',
           petImage: ImageConstants.categoryImage1,
           petDistance: '5km',
@@ -146,6 +163,7 @@ class CategoryService {
           petWeight: 10,
           petDescription:
               'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc leo tortor, posuere sit amet est commodo, scelerisque ultricies arcu. Nullam eros sapien, auctor sed mattis et, eleifend eget lacus. Pellentesque vitae ante sed magna aliquam aliquam. Vivamus sit amet mauris ut nibh luctus finibus. Suspendisse ac ligula at ipsum ullamcorper scelerisque id non mi.',
+          isFavourite: false,
         ),
       ],
     ),

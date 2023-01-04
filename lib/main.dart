@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_pet_app/config/routes.dart';
 import 'package:flutter_pet_app/screens/screen_exports.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    const ProviderScope(
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {

@@ -1,6 +1,10 @@
+import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_pet_app/constants/constant_exports.dart';
+import 'package:flutter_pet_app/providers/add_favourite.dart';
 import 'package:flutter_pet_app/widgets/widget_exports.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:gap/gap.dart';
 import 'package:lottie/lottie.dart';
 
 class FavouriteScreen extends StatefulWidget {
@@ -32,25 +36,120 @@ class _FavouriteScreenState extends State<FavouriteScreen>
       appBar: CommonAppBarWidget(
         appBar: AppBar(),
       ),
-      body: Column(
-        children: [
-          Lottie.asset("assets/lottie/no_fav.json", controller: _controller,
-              onLoaded: (composition) {
-            _controller
-              ..duration = composition.duration
-              ..forward();
-          }),
-          const Center(
-            child: Text(
-              "You have no favourites",
-              style: TextStyle(
-                fontFamily: 'poppins_bold',
-                fontSize: 24,
-                color: ColorConstants.black,
-              ),
-            ),
-          ),
-        ],
+      body: Consumer(
+        builder: (BuildContext context, WidgetRef ref, Widget? child) {
+          final getProvider = ref.watch(provider);
+          final PetList providerNotifier = ref.watch(provider.notifier);
+          return getProvider.length == 0
+              ? Column(
+                  children: [
+                    Lottie.asset("assets/lottie/no_fav.json",
+                        controller: _controller, onLoaded: (composition) {
+                      _controller
+                        ..duration = composition.duration
+                        ..forward();
+                    }),
+                    const Center(
+                      child: Text(
+                        "You have no favourites",
+                        style: TextStyle(
+                          fontFamily: 'poppins_bold',
+                          fontSize: 24,
+                          color: ColorConstants.black,
+                        ),
+                      ),
+                    ),
+                  ],
+                )
+              : Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 24.0,
+                  ),
+                  child: Column(
+                    children: [
+                      Expanded(
+                        child: ListView.builder(
+                            itemCount: getProvider.length,
+                            itemBuilder: (context, index) {
+                              var favouritePet = getProvider[index];
+                              return Card(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                child: SizedBox(
+                                  width: MediaQuery.of(context).size.width,
+                                  height: 150,
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(16.0),
+                                    child: Row(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        IconButton(
+                                          icon: const Icon(
+                                            EvaIcons.heart,
+                                            color: ColorConstants.red,
+                                          ),
+                                          onPressed: () {
+                                            providerNotifier
+                                                .removePet(favouritePet);
+                                          },
+                                        ),
+                                        Image.asset(favouritePet.petImage),
+                                        Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              favouritePet.petName,
+                                              style: const TextStyle(
+                                                fontFamily: 'poppins_bold',
+                                                fontSize: 16,
+                                              ),
+                                            ),
+                                            const Gap(8),
+                                            Row(
+                                              children: [
+                                                const Icon(
+                                                  Icons.location_on_outlined,
+                                                  color: ColorConstants.red,
+                                                ),
+                                                Text(
+                                                  "Distance (${favouritePet.petDistance})",
+                                                  style: FontConstants
+                                                      .commonText.titleSmall,
+                                                ),
+                                              ],
+                                            ),
+                                            const Gap(8),
+                                            Row(
+                                              children: const [
+                                                Icon(
+                                                  EvaIcons.messageCircleOutline,
+                                                  color: Color(0xFF4AA2F1),
+                                                ),
+                                                Gap(8),
+                                                Icon(
+                                                  EvaIcons.phoneOutline,
+                                                  color: ColorConstants.red,
+                                                ),
+                                              ],
+                                            )
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              );
+                            }),
+                      )
+                    ],
+                  ),
+                );
+        },
       ),
     );
   }

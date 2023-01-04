@@ -117,9 +117,16 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Hero(
                             tag: category.petName,
                             child: PetWidget(
+                              petId: category.petId,
                               petName: category.petName,
                               petDistance: category.petDistance,
                               petImage: category.petImage,
+                              petGender: category.petGender,
+                              petAge: category.petAge,
+                              petWeight: category.petWeight,
+                              petDescription: category.petDescription,
+                              categoryId: category.categoryId,
+                              isFavourite: category.isFavourite,
                             ),
                           ),
                         );
