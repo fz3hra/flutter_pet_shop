@@ -34,6 +34,7 @@ class _FavouriteScreenState extends State<FavouriteScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CommonAppBarWidget(
+        appbarName: 'Pet',
         appBar: AppBar(),
       ),
       body: Consumer(

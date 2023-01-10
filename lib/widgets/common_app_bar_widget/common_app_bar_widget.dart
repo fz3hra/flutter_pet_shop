@@ -4,10 +4,12 @@ import 'package:flutter_pet_app/constants/constant_exports.dart';
 class CommonAppBarWidget extends StatelessWidget
     implements PreferredSizeWidget {
   final AppBar appBar;
+  final String appbarName;
 
   const CommonAppBarWidget({
     super.key,
     required this.appBar,
+    required this.appbarName,
   });
 
   @override
@@ -23,9 +25,9 @@ class CommonAppBarWidget extends StatelessWidget
           Navigator.pop(context);
         },
       ),
-      title: const Text(
-        'Pet',
-        style: TextStyle(
+      title: Text(
+        appbarName,
+        style: const TextStyle(
           color: ColorConstants.black,
           fontFamily: 'poppins_bold',
           fontSize: 14,
@@ -37,6 +39,5 @@ class CommonAppBarWidget extends StatelessWidget
   }
 
   @override
-  // TODO: implement preferredSize
   Size get preferredSize => Size.fromHeight(appBar.preferredSize.height);
 }
