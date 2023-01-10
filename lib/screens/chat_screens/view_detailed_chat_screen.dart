@@ -93,7 +93,9 @@ class ViewDetailedChatscreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  onChanged: (value) {},
+                  onChanged: (value) {
+                    //test
+                  },
                 ),
                 const Gap(24),
               ],
