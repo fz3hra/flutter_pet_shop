@@ -9,61 +9,64 @@ class ViewDetailedChatscreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: CommonAppBarWidget(
-          appbarName: 'Chat',
-          appBar: AppBar(),
-        ),
-        body: Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 16.0,
+    return SafeArea(
+      child: Scaffold(
+          appBar: CommonAppBarWidget(
+            appbarName: 'Chat',
+            appBar: AppBar(),
           ),
-          child: Column(
-            children: [
-              PetOwnerContactWidget(
-                isChat: true,
-              ),
-              Expanded(
-                child: ListView.builder(
-                  reverse: true,
-                  itemCount: UserChatServices.chats.length,
-                  itemBuilder: (context, index) => Container(
-                    margin: const EdgeInsets.symmetric(
-                      horizontal: 24,
-                      vertical: 8,
-                    ),
-                    child: Align(
-                      alignment:
-                          UserChatServices.chats[index].isMessager == true
-                              ? Alignment.centerLeft
-                              : Alignment.centerRight,
-                      child: FittedBox(
-                        fit: BoxFit.fill,
-                        child: Container(
-                          padding: const EdgeInsets.all(16),
-                          width: 200,
-                          decoration: BoxDecoration(
-                            color: UserChatServices.chats[index].isMessager
-                                ? const Color(0xFFE5E5E5)
-                                : const Color(0xFFD0ECE8),
-                            borderRadius:
-                                UserChatServices.chats[index].isMessager == true
-                                    ? const BorderRadius.only(
-                                        topLeft: Radius.circular(20),
-                                        topRight: Radius.circular(20),
-                                        bottomLeft: Radius.circular(0),
-                                        bottomRight: Radius.circular(20),
-                                      )
-                                    : const BorderRadius.only(
-                                        topLeft: Radius.circular(20),
-                                        topRight: Radius.circular(20),
-                                        bottomLeft: Radius.circular(20),
-                                        bottomRight: Radius.circular(0),
-                                      ),
-                          ),
-                          child: Center(
-                            child: Text(
-                              UserChatServices.chats[index].userMessage,
+          body: Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 16.0,
+            ),
+            child: Column(
+              children: [
+                PetOwnerContactWidget(
+                  isChat: true,
+                ),
+                Expanded(
+                  child: ListView.builder(
+                    reverse: true,
+                    itemCount: UserChatServices.chats.length,
+                    itemBuilder: (context, index) => Container(
+                      margin: const EdgeInsets.symmetric(
+                        horizontal: 24,
+                        vertical: 8,
+                      ),
+                      child: Align(
+                        alignment:
+                            UserChatServices.chats[index].isMessager == true
+                                ? Alignment.centerLeft
+                                : Alignment.centerRight,
+                        child: FittedBox(
+                          fit: BoxFit.fill,
+                          child: Container(
+                            padding: const EdgeInsets.all(16),
+                            width: 200,
+                            decoration: BoxDecoration(
+                              color: UserChatServices.chats[index].isMessager
+                                  ? ColorConstants.purple
+                                  : ColorConstants.orange,
+                              borderRadius:
+                                  UserChatServices.chats[index].isMessager ==
+                                          true
+                                      ? const BorderRadius.only(
+                                          topLeft: Radius.circular(20),
+                                          topRight: Radius.circular(20),
+                                          bottomLeft: Radius.circular(0),
+                                          bottomRight: Radius.circular(20),
+                                        )
+                                      : const BorderRadius.only(
+                                          topLeft: Radius.circular(20),
+                                          topRight: Radius.circular(20),
+                                          bottomLeft: Radius.circular(20),
+                                          bottomRight: Radius.circular(0),
+                                        ),
+                            ),
+                            child: Center(
+                              child: Text(
+                                UserChatServices.chats[index].userMessage,
+                              ),
                             ),
                           ),
                         ),
@@ -71,31 +74,31 @@ class ViewDetailedChatscreen extends StatelessWidget {
                     ),
                   ),
                 ),
-              ),
-              TextField(
-                decoration: InputDecoration(
-                  filled: true,
-                  fillColor: ColorConstants.lightGrey,
-                  hintText: 'Write a message..',
-                  contentPadding: const EdgeInsets.all(15),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(30),
-                    borderSide: const BorderSide(
-                      color: Colors.transparent,
+                TextField(
+                  decoration: InputDecoration(
+                    filled: true,
+                    fillColor: ColorConstants.lightGrey,
+                    hintText: 'Write a message..',
+                    contentPadding: const EdgeInsets.all(15),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(30),
+                      borderSide: const BorderSide(
+                        color: Colors.transparent,
+                      ),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(30),
+                      borderSide: const BorderSide(
+                        color: Colors.transparent,
+                      ),
                     ),
                   ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(30),
-                    borderSide: const BorderSide(
-                      color: Colors.transparent,
-                    ),
-                  ),
+                  onChanged: (value) {},
                 ),
-                onChanged: (value) {},
-              ),
-              const Gap(24),
-            ],
-          ),
-        ));
+                const Gap(24),
+              ],
+            ),
+          )),
+    );
   }
 }
