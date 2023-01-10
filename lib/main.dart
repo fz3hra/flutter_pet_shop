@@ -30,6 +30,7 @@ class MyApp extends StatelessWidget {
         Routes.registerScreen: (context) => const RegistrationScreen(),
         Routes.petDetailScreen: (context) => const PetDetailScreen(),
         Routes.bottomNav: (context) => const TabNavigation(),
+        Routes.detailedChat: (context) => const ViewDetailedChatscreen(),
       },
     );
   }

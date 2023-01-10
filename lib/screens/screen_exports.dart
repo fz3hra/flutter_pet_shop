@@ -5,5 +5,6 @@ export 'home_screen/home_screen.dart';
 export 'pet_detail_screen/pet_detail_screen.dart';
 export 'favourite_screens/favourite_screen.dart';
 export 'chat_screens/chat_screen.dart';
+export 'chat_screens/view_detailed_chat_screen.dart';
 export 'account_screens/account_screen.dart';
 export 'tab_navigation.dart';

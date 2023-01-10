@@ -1,5 +1,6 @@
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_pet_app/config/routes.dart';
 import 'package:flutter_pet_app/constants/constant_exports.dart';
 import 'package:flutter_pet_app/models/chat_model.dart';
 import 'package:flutter_pet_app/models/status_model.dart';
@@ -21,7 +22,6 @@ class ChatScreen extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: Column(
           children: [
-            // status row
             SizedBox(
               height: 100,
               child: Row(
@@ -30,10 +30,10 @@ class ChatScreen extends StatelessWidget {
                     children: const [
                       CircleAvatar(
                         radius: 24,
-                        child: Icon(EvaIcons.plus),
+                        child: const Icon(EvaIcons.plus),
                         backgroundColor: Colors.white,
                       ),
-                      const Gap(8),
+                      Gap(8),
                       Text("Add"),
                     ],
                   ),
@@ -68,7 +68,6 @@ class ChatScreen extends StatelessWidget {
                           ),
                         );
                       },
-                      // child: ,
                     ),
                   ),
                 ],
@@ -80,90 +79,11 @@ class ChatScreen extends StatelessWidget {
                 itemCount: ChatServices.chats.length,
                 itemBuilder: (context, index) {
                   var chats = ChatServices.chats[index];
-                  return Card(
-                    margin: const EdgeInsets.symmetric(
-                      vertical: 10,
-                    ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(10.0),
-                      child: SizedBox(
-                        width: MediaQuery.of(context).size.width,
-                        height: 80,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Row(
-                              children: [
-                                CircleAvatar(
-                                  radius: 32,
-                                  backgroundColor: Color(0xFFDFE0E3),
-                                  backgroundImage: AssetImage(
-                                    chats.userImage,
-                                  ),
-                                ),
-                                const Gap(16),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      chats.userName,
-                                      style: const TextStyle(
-                                        fontFamily: 'poppins_bold',
-                                        fontSize: 16,
-                                      ),
-                                    ),
-                                    const Gap(8),
-                                    Text(
-                                      chats.userMessage,
-                                      style: const TextStyle(
-                                        fontFamily: 'poppins_regular',
-                                        fontSize: 12,
-                                        color: ColorConstants.darkGrey,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  chats.time,
-                                  style: const TextStyle(
-                                    fontFamily: 'poppins_bold',
-                                    fontSize: 12,
-                                    color: ColorConstants.green,
-                                  ),
-                                ),
-                                const Gap(8),
-                                chats.numberOfMesssages != 0
-                                    ? Container(
-                                        padding: const EdgeInsets.all(10),
-                                        decoration: const BoxDecoration(
-                                          shape: BoxShape.circle,
-                                          color: ColorConstants.green,
-                                        ),
-                                        child: Text(
-                                          "${chats.numberOfMesssages}",
-                                          style: const TextStyle(
-                                            fontFamily: 'poppins_regular',
-                                            fontSize: 12,
-                                            color: Colors.white,
-                                          ),
-                                        ),
-                                      )
-                                    : Container(),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
+                  return GestureDetector(
+                    onTap: () =>
+                        Navigator.pushNamed(context, Routes.detailedChat),
+                    child: ChatWidget(
+                      chats: chats,
                     ),
                   );
                 },

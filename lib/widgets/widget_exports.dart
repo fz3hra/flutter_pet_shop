@@ -10,3 +10,4 @@ export 'pet_detail_widgets/pet_container_widget.dart';
 export 'pet_detail_widgets/pet_description_widget.dart';
 export 'pet_detail_widgets/pet_owner_contact_widget.dart';
 export 'button_widgets/full_width_button_widget.dart';
+export 'chat_widgets/card_widget.dart';

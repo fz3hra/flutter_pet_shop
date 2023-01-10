@@ -5,4 +5,5 @@ class RouteConstants {
   static const String home = '/home';
   static const String pet = 'pet';
   static const String bottomNav = 'bottomNav';
+  static const String detailedChat = "chats";
 }

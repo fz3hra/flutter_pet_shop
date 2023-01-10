@@ -7,4 +7,5 @@ class Routes {
   static const String homeScreen = "/${RouteConstants.home}";
   static const String petDetailScreen = "/${RouteConstants.pet}";
   static const String bottomNav = "/${RouteConstants.bottomNav}";
+  static const String detailedChat = "/${RouteConstants.detailedChat}";
 }

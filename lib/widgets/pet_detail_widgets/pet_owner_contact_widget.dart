@@ -4,7 +4,11 @@ import 'package:flutter_pet_app/constants/constant_exports.dart';
 import 'package:gap/gap.dart';
 
 class PetOwnerContactWidget extends StatelessWidget {
-  const PetOwnerContactWidget({super.key});
+  bool isChat;
+  PetOwnerContactWidget({
+    super.key,
+    required this.isChat,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -47,18 +51,20 @@ class PetOwnerContactWidget extends StatelessWidget {
                         ),
                       ),
                       const Gap(8),
-                      Row(
-                        children: [
-                          const Icon(
-                            Icons.location_on_outlined,
-                            color: ColorConstants.red,
-                          ),
-                          Text(
-                            "London",
-                            style: FontConstants.commonText.titleSmall,
-                          ),
-                        ],
-                      ),
+                      isChat == true
+                          ? Container()
+                          : Row(
+                              children: [
+                                const Icon(
+                                  Icons.location_on_outlined,
+                                  color: ColorConstants.red,
+                                ),
+                                Text(
+                                  "London",
+                                  style: FontConstants.commonText.titleSmall,
+                                ),
+                              ],
+                            ),
                     ],
                   ),
                 ],

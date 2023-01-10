@@ -141,7 +141,9 @@ class _PetDetailScreenState extends State<PetDetailScreen> {
                         ],
                       ),
                       const Gap(16),
-                      const PetOwnerContactWidget(),
+                      PetOwnerContactWidget(
+                        isChat: false,
+                      ),
                       const Gap(16),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
